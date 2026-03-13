@@ -2,7 +2,7 @@
 
 > **2026년 기준** 한국 부동산 거래 시 필요한 **지자체 집수리 지원금 조회 · 구비서류 안내 · 임장 체크리스트**를 하나의 웹 앱으로 통합한 실무 가이드 도구입니다.
 
-🔗 **라이브 데모**: [react-realestate-checklst.vercel.app](https://react-realestate-checklst.vercel.app)
+🔗 **라이브 데모**: [realestate-checklst.vercel.app](https://realestate-checklst.vercel.app/)
 
 ---
 
