@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const regionData = {
   서울: {
@@ -407,10 +407,17 @@ export default function App() {
     return acc + checklistData[k].items.filter(i => i.critical && !checks[i.id]).length;
   }, 0);
 
+  useEffect(() => {
+    document.body.style.background = "#f3f4f6";
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.documentElement.style.background = "#f3f4f6";
+  }, []);
+
   const region = regionData[selectedRegion];
 
   return (
-    <div style={{ fontFamily: "'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" }} className="h-screen flex flex-col bg-gray-100 overflow-hidden">
+    <div style={{ fontFamily: "'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" }} className="bg-gray-100 w-full min-h-screen overflow-x-hidden">
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white px-6 py-5">
         <h1 className="text-2xl font-bold">🏠 부동산 매수 도우미</h1>
@@ -439,12 +446,9 @@ export default function App() {
         </button>
       </div>
 
-      {/* 탭 콘텐츠 래퍼: 남은 높이를 채우고 내부 스크롤 */}
-      <div className="flex-1 overflow-y-auto">
-
       {/* Support Tab */}
       {tab === "support" && (
-        <div className="p-4 max-w-2xl mx-auto">
+        <div className="p-4 pb-8">
           <p className="text-xs text-gray-500 mb-3 bg-yellow-50 border border-yellow-200 rounded p-2">
             ⚠️ 지원사업은 예산 소진 시 조기 마감됩니다. 반드시 해당 기관에 최신 공고를 직접 확인하세요.
           </p>
@@ -553,7 +557,7 @@ export default function App() {
 
       {/* Docs Tab */}
       {tab === "docs" && (
-        <div className="p-4 max-w-2xl mx-auto">
+        <div className="p-4 pb-8">
           <p className="text-xs text-gray-500 mb-3 bg-yellow-50 border border-yellow-200 rounded p-2">
             ⚠️ 공고일 이후 발급분만 인정되는 경우가 많습니다. 신청 전 <b>정부24 보조금24</b> 또는 주민센터에서 최신 구비 서류 목록을 확인하세요.
           </p>
@@ -634,7 +638,7 @@ export default function App() {
 
       {/* Checklist Tab */}
       {tab === "checklist" && (
-        <div className="p-4 max-w-2xl mx-auto">
+        <div className="p-4 pb-8">
           {/* Progress */}
           <div className="bg-white rounded-xl shadow p-4 mb-4">
             <div className="flex items-center justify-between mb-2">
@@ -747,7 +751,6 @@ export default function App() {
         </div>
       )}
 
-      </div> {/* flex-1 overflow-y-auto 래퍼 닫기 */}
     </div>
   );
 }
