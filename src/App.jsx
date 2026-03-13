@@ -135,7 +135,7 @@ const regionData = {
         works: "주택 신축·증축·개축·리모델링 전반",
         note: "취득세 감면 혜택 2027년 12월 31일까지. 귀농귀촌종합센터 상담 권장",
         apply: "농림축산식품부 / 해당 지역 농협",
-        url: "https://www.returnfarm.com",
+        url: "https://www.mafra.go.kr",
         color: "green",
       },
       {
